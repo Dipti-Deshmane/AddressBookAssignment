@@ -12,14 +12,19 @@ public class AddressBook {
 
         // Method to add a new contact
         public void addContact(Contact contact) {
+
             contacts.add(contact);
         }
 
         // Method to display all contacts
         public void displayContacts() {
-            for (Contact contact : contacts) {
-                System.out.println(contact);
-                System.out.println("-----------------------");
+            if (contacts.isEmpty()) {
+                System.out.println("No contacts found.");
+            } else {
+                for (Contact contact : contacts) {
+                    System.out.println(contact);
+                }
+
             }
         }
     }

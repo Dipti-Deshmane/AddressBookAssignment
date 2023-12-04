@@ -30,5 +30,6 @@ public class Contact {
         return "Name: " + name + ", Email: " + email + ", Phone Number: " + phoneNumber;
     }
 
-    }
+
+}
 
