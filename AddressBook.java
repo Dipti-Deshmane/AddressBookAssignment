@@ -43,7 +43,19 @@ public class AddressBook {
                     }
                 }
                 System.out.println("Contact not found.");
+
+                            }
+
+    public void deleteContact(String firstName) {
+        for (Contact contact : contacts) {
+            if (contact.getName().equals(firstName)) {
+                contacts.remove(contact);
+                System.out.println("Contact deleted successfully.");
+                return;
             }
         }
+        System.out.println("Contact not found.");
+    }
+}
 
 
