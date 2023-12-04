@@ -1,6 +1,7 @@
 package Assignment11;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AddressBook {
         private ArrayList<Contact> contacts;
@@ -18,14 +19,31 @@ public class AddressBook {
 
         // Method to display all contacts
         public void displayContacts() {
-            if (contacts.isEmpty()) {
-                System.out.println("No contacts found.");
-            } else {
+
                 for (Contact contact : contacts) {
-                    System.out.println(contact);
+                    System.out.println("Person Name: " + contact.getName());
+                    System.out.println("Last Name: " + contact.getPhoneNumber());
+                    System.out.println("Address: " + contact.getEmail());
                 }
 
             }
+
+            public void editName(String oldName) {
+                for (Contact contact : contacts) {
+                    if (contact.getName().equals(oldName)) {
+                        // Prompt the user to enter new details
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.println("Enter new name for the contact:");
+                        System.out.print("New First Name: ");
+                        String newFirstName = scanner.nextLine();
+                        contact.setName(newFirstName);
+
+                        System.out.println("Name is updated successfully.");
+                        return;
+                    }
+                }
+                System.out.println("Contact not found.");
+            }
         }
-    }
+
 

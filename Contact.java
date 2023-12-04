@@ -6,7 +6,11 @@ public class Contact {
         private String phoneNumber;
         private String email;
 
-        // Constructor
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Constructor
     public Contact(String name, String phoneNumber, String email) {
         this.name = name;
         this.phoneNumber = phoneNumber;

@@ -8,13 +8,16 @@ public class AddressBookMain {
         // Create a new AddressBook
 
         Scanner sc = new Scanner(System.in);
+
         String choice;
         AddressBook addressBook = new AddressBook();
 
         do {
             System.out.println("1. Add a new contact");
             System.out.println("2. Display all contacts");
-            System.out.println("3. Exit");
+            System.out.println("3. Edit Name");
+            System.out.println("4. Exit");
+
             System.out.print("Enter your choice: ");
             choice = sc.nextLine();
 
@@ -35,16 +38,25 @@ public class AddressBookMain {
                 addressBook.displayContacts();
                 break;
             case "3":
+                System.out.println("Enter the First Name of the contact you want to edit:");
+                String editFirstName = sc.nextLine();
+
+                // Editing the contact
+                addressBook.editName(editFirstName);
+                break;
+            case "4":
                 System.out.println("Exiting...");
                 break;
+
             default:
                 System.out.println("Invalid choice! Please try again.");
                 break;
         }
         System.out.println();
-    } while (!choice.equals("3"));
+    } while (!choice.equals("4"));
 
         sc.close();
+
 
 
 
